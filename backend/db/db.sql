@@ -1,0 +1,9 @@
+CREATE DATABASE blogs;
+CREATE TABLE blog_list(
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100),
+    tag VARCHAR(50) NOT NULL,
+    body TEXT NOT NULL,
+    thumbnail TEXT,
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
