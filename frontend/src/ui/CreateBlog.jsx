@@ -14,6 +14,8 @@ export default function CreateBlog() {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(createBlogThunk(blogData));
+    setBlogData({ title: "", tag: "", body: "", thumbnail: "" });
+
   }
 
   return (
