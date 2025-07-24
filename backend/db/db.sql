@@ -4,6 +4,6 @@ CREATE TABLE blog_list(
     title VARCHAR(100),
     tag VARCHAR(50) NOT NULL,
     body TEXT NOT NULL,
-    thumbnail TEXT,
+    thumbnail TEXT NOT NULL,
     created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -1,6 +1,6 @@
 // Create blog
 export const createBlogQuery = `
-INSERT INTO blog_list(title, tag, body, thumbnail) VALUES($1, $2, $3, $4,) RETURNING *`;
+INSERT INTO blog_list(title, tag, body, thumbnail) VALUES($1, $2, $3, $4) RETURNING *`;
 // Read blogs
 export const readAllBlogsQuery = ` SELECT * FROM blog_list`;
 export const readSingleBlogQuery = ` SELECT * FROM blog_list WHERE id = $1`;

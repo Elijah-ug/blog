@@ -1,10 +1,10 @@
-import { query } from "../db/pool"
+import { query } from "../db/pool.js"
 import {
     createBlogQuery, deleteBlogQuery, readAllBlogsQuery, readSingleBlogQuery, updateBlogQuery
-} from "../db/sqlDatabaseQuery";
-import { createError } from "../utils/error";
+} from "../db/sqlDatabaseQuery.js";
+import { createError } from "../utils/error.js";
 // create blog controller
-export const createBlogController = async (rq, res, next) => {
+export const createBlogController = async (req, res, next) => {
     const { title, tag, body, thumbnail } = req.body;
     try {
         if (!title || !tag || !body || !thumbnail) {
@@ -14,8 +14,8 @@ export const createBlogController = async (rq, res, next) => {
         res.status(200).json(data.rows[0]);
         console.log(data);
     } catch (error) {
-        console.log(error);
-        next(createError(400, "Failed to create a blog!"))
+        console.log(error.message);
+        next(createError(400, "Failed to create a blog!: "))
     }
 }
 // Read
